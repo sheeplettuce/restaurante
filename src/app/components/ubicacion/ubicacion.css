@@ -1,0 +1,22 @@
+.contenedor { padding: 16px; } 
+.panel { 
+display: grid; 
+grid-template-columns: minmax(260px, 360px) 1fr; 
+gap: 16px; 
+align-items: start; 
+} 
+.error { color: #c82333; } 
+.acciones { display: flex; gap: 8px; margin: 8px 0; } 
+/* ALTURA Y ESTILO DEL MAPA */ 
+.mapa { 
+height: 60vh;        
+ /* ajusta a tu gusto; 60vh es el recomendable */ 
+min-height: 360px;    /* asegura un mínimo útil */ 
+width: 100%; 
+border: 1px solid #e6e6e6; 
+border-radius: 8px; 
+margin: 12px 0; 
+} 
+@media (max-width: 800px) { 
+.panel { grid-template-columns: 1fr; } 
+} 

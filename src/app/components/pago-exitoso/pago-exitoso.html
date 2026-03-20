@@ -1,0 +1,25 @@
+<section style="padding: 24px; max-width: 800px; margin: 0 auto;">
+  <h2>Pago exitoso</h2>
+
+  <p *ngIf="cargando">Confirmando tu pago...</p>
+
+  <div *ngIf="!cargando && error" style="border: 1px solid #e53935; padding: 12px; border-radius: 8px;">
+    {{ error }}
+  </div>
+
+  <div *ngIf="!cargando && !error && info">
+    <p><strong>Confirmación:</strong> ¡Gracias! Tu pago fue validado.</p>
+
+    <p><strong>Total pagado:</strong> {{ totalPagado | currency:'MXN':'symbol':'1.0-0' }}</p>
+    <p><strong>Folio/Clave:</strong> {{ folio }}</p>
+
+    <hr style="margin: 16px 0;">
+    <p style="margin: 0;"><strong>Detalles del pedido:</strong></p>
+    <p style="margin: 0;">{{ platillos }}</p>
+  </div>
+
+  <div style="margin-top: 16px;">
+    <a routerLink="/">Volver al menú</a>
+  </div>
+</section>
+

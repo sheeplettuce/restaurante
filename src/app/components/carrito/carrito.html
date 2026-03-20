@@ -1,0 +1,106 @@
+<section class="carrito">
+
+<h2>Carrito</h2>
+
+<p *ngIf="carrito.items().length === 0">
+Aún no has agregado platillos.
+</p>
+
+<table *ngIf="carrito.items().length > 0">
+
+<thead>
+
+<tr>
+<th>Platillo</th>
+<th>Precio</th>
+<th>Cantidad</th>
+<th>Importe</th>
+<th></th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr *ngFor="let it of carrito.items(); trackBy: trackById">
+
+<td>
+{{ it.nombre }}
+</td>
+
+<td>
+{{ it.precio | currency:'MXN':'symbol':'1.0-0' }}
+</td>
+
+<td>
+
+<input
+type="number"
+min="0"
+[value]="it.cantidad"
+(input)="actualizarCantidad(it.id,$any($event.target).value)">
+
+</td>
+
+<td>
+
+{{ (it.precio * it.cantidad) | currency:'MXN':'symbol':'1.0-0' }}
+
+</td>
+
+<td>
+
+<button (click)="carrito.eliminarItem(it.id)">
+Eliminar
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<div *ngIf="carrito.items().length > 0">
+
+<p>
+Subtotal:
+<strong>
+{{ carrito.subtotal() | currency:'MXN':'symbol':'1.0-0' }}
+</strong>
+</p>
+
+<p>
+IVA (16%):
+<strong>
+{{ carrito.iva() | currency:'MXN':'symbol':'1.0-0' }}
+</strong>
+</p>
+
+<p>
+Total:
+<strong>
+{{ carrito.total() | currency:'MXN':'symbol':'1.0-0' }}
+</strong>
+</p>
+
+<div style="margin-top:10px">
+
+<button (click)="carrito.vaciarCarrito()">
+Vaciar carrito
+</button>
+
+<button routerLink="/">
+Seguir comprando
+</button>
+
+<button routerLink="/ubicacion">
+  Ver ubicación y calcular envío
+</button>
+
+</div>
+
+</div>
+
+</section>

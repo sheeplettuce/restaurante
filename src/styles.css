@@ -1,0 +1,98 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* global dark background */
+body {
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  font-family: 'Merriweather', serif;
+}
+
+/* BOTONES GLOBALES */
+
+button {
+
+  background-color: #e53935;
+  color: white;
+
+  border: none;
+  border-radius: 8px;
+
+  padding: 10px 18px;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+
+  font-family: 'Merriweather', serif;
+
+}
+
+/* Hover elegante */
+
+button:hover {
+
+  background-color: #ff5252;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0px 5px 15px rgba(229,57,53,0.4);
+
+}
+
+/* Click */
+
+button:active {
+
+  transform: translateY(0px);
+
+  box-shadow: 0px 2px 5px rgba(229,57,53,0.4);
+
+}
+
+/* Espaciado */
+
+button + button {
+
+  margin-left: 8px;
+
+}
+
+/* Botones secundarios */
+
+button.secondary {
+
+  background-color: #333;
+
+}
+
+button.secondary:hover {
+
+  background-color: #444;
+
+}
+
+/* Botones deshabilitados */
+
+button:disabled {
+
+  background-color: #555;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+
+}
+
+
+/* FIX Leaflet cuando hay reglas globales para img/video */ 
+.leaflet-container .leaflet-marker-icon, 
+.leaflet-container .leaflet-marker-shadow, 
+.leaflet-container .leaflet-tile, 
+.leaflet-container img.leaflet-image-layer, 
+.leaflet-container .leaflet-pane > img { 
+max-width: none !important; 
+max-height: none !important; 
+} 

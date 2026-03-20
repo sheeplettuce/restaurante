@@ -1,0 +1,19 @@
+/* dark footer with elegant typography and subtle red details */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Playfair+Display&display=swap');
+
+footer {
+  background-color: #111;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0.3rem 0;
+}
+
+footer p:first-child {
+  color: #e53935;
+} 

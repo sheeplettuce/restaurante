@@ -1,0 +1,38 @@
+<section class="contenedor"> 
+<h2 *ngIf="!compacto">Ubicación y envío (Aguascalientes)</h2> 
+<div class="panel"> 
+<div> 
+<p> 
+<strong>Restaurante:</strong> 
+{{ geo.restaurante.latitud }}, {{ geo.restaurante.longitud }} 
+</p> 
+<p *ngIf="geo.ubicacionUsuario() as u"> 
+<strong>Tu ubicación:</strong> 
+{{ u.latitud }}, {{ u.longitud }} 
+<span *ngIf="u.precision"> (±{{ u.precision | number:'1.0-0' }} m)</span> 
+</p> 
+<p *ngIf="!geo.ubicacionUsuario()">Aún no se ha obtenido tu ubicación.</p> 
+<ng-container *ngIf="geo.distanciaKm() as d"> 
+<p><strong>Distancia:</strong> {{ d }} km</p> 
+<p><strong>Envío estimado:</strong> {{ carrito.envio() | currency:'MXN':'symbol' }}</p> 
+<p><strong>Total + envío:</strong> {{ geo.costomasenvio() | currency:'MXN':'symbol' }}</p>
+</ng-container> 
+<p *ngIf="geo.errorGeolocalizacion()" class="error"> {{ geo.errorGeolocalizacion() }}</p> 
+<div class="acciones"> 
+<button type="button" (click)="reintentarUbicacion()">Obtener mi ubicación</button> 
+<button *ngIf="!compacto" type="button" routerLink="/carrito">Ir al carrito</button> 
+<button
+  *ngIf="!compacto"
+  type="button"
+  (click)="pagarConStripe()"
+  [disabled]="pagando || carrito.items().length === 0 || carrito.envio() <= 0 || !!geo.errorGeolocalizacion()"
+>
+  {{ pagando ? 'Iniciando pago...' : 'Pagar con Stripe' }}
+</button>
+</div> 
+<small>* Requiere permiso del usuario y HTTPS o localhost.</small> 
+</div> 
+<!-- IMPORTANTE: id="map" y clase "mapa" para altura --> 
+<div id="map" class="mapa" aria-label="Mapa: restaurante y tu ubicación"></div> 
+</div> 
+</section> 

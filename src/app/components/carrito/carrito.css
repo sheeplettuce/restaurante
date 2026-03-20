@@ -1,0 +1,110 @@
+/* Tipografías elegantes */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Playfair+Display&display=swap');
+
+.carrito {
+  background-color: #111;
+  color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Título */
+.carrito h2 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e53935;
+  padding-bottom: 10px;
+}
+
+/* Tabla elegante */
+
+table {
+
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px rgba(229,57,53,0.2);
+
+}
+
+/* Encabezado */
+
+thead {
+
+  background-color: #e53935;
+  color: white;
+  font-family: 'Playfair Display', serif;
+
+}
+
+th {
+
+  padding: 12px;
+  text-align: center;
+  font-size: 16px;
+
+}
+
+/* Filas */
+
+td {
+
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+  font-family: 'Merriweather', serif;
+
+}
+
+tr:hover {
+
+  background-color: #222;
+
+}
+
+/* Inputs */
+
+input[type="number"] {
+
+  width: 60px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #e53935;
+  background-color: #111;
+  color: white;
+  text-align: center;
+
+}
+
+/* Totales */
+
+.carrito p {
+
+  font-size: 18px;
+  margin: 8px 0;
+  text-align: right;
+  font-family: 'Merriweather', serif;
+
+}
+
+.carrito strong {
+
+  color: #e53935;
+
+}
+
+/* Contenedor botones */
+
+.carrito div div {
+
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+
+}

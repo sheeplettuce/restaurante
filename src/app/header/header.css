@@ -1,0 +1,25 @@
+/* dark header with elegant typography and red accents */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Playfair+Display&display=swap');
+
+header {
+  background-color: #111;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  padding: 1rem;
+}
+
+header h1 {
+  margin: 0;
+  color: #fff;
+  position: relative;
+}
+
+header h1::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #e53935;
+  margin: 0.5rem auto 0;
+} 

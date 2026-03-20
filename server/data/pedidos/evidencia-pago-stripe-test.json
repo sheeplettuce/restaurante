@@ -1,0 +1,28 @@
+{
+  "sessionId": "cs_test_ejemplo_00000000000000",
+  "folio": "e9f6e3a4-8b1d-4d9a-a1d1-3a2b7f9f1a2b",
+  "descripcion": "2x Tacos, 1x Agua fresca",
+  "platillos": [
+    {
+      "id": 1710000000000,
+      "nombre": "Tacos",
+      "imagen": "https://i.pinimg.com/736x/89/bf/a3/89bfa382aa89315baa88e02d571d5076.jpg",
+      "precio": 50,
+      "cantidad": 2
+    },
+    {
+      "id": 1710000000001,
+      "nombre": "Agua fresca",
+      "imagen": "https://i.pinimg.com/736x/2d/54/ba/2d54ba47b6137a393d32f6569dcc62f6.jpg",
+      "precio": 50,
+      "cantidad": 1
+    }
+  ],
+  "subtotal": 150,
+  "iva": 24,
+  "envio": 25,
+  "total": 199,
+  "fechaHora": "2026-03-20T09:40:00.000Z",
+  "estado": "Pagado (Stripe Test)"
+}
+
